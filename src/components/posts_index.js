@@ -6,7 +6,9 @@ import { fetchPosts } from '../actions';
 class PostsIndex extends Component{
 
   componentDidMount(){
+
       this.props.fetchPosts();
+
   }
 
   renderPosts(){
@@ -21,7 +23,7 @@ class PostsIndex extends Component{
   }
 
   render(){
-    console.log("inseid",this.props.posts);
+    console.log("hello",this.props.posts)
     return(
       <div>
         <h3>Posts</h3>
@@ -35,7 +37,8 @@ class PostsIndex extends Component{
 }
 
 function mapStateToProps(state){
+  console.log("state",state);
   return { posts: state.posts}
 }
 
-export default connect (null, {fetchPosts}) (PostsIndex);
+export default connect (mapStateToProps,{fetchPosts})(PostsIndex);
