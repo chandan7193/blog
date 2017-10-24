@@ -12,16 +12,21 @@ class PostsNew extends Component{
             type ="text"
             {...field.input}
             />
-            {field.meta.error}
+            {field.meta.touched ? field.meta.error: ''}
         </div>
       )
     }
 
+onSubmit(values){
+  console.log(values);
+}
 
 
   render(){
+    const {handleSubmit} =this.props;
+
     return (
-      <form>
+      <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <Field
         label ="Title for Posts"
         name ="title"
@@ -55,11 +60,11 @@ function validate(values){
   }
 
   if(!values.categories){
-    errors.title ="Enter the categories";
+    errors.categories ="Enter the categories";
   }
 
   if(!values.content){
-    errors.title ="Enter the content";
+    errors.content ="Enter the content";
   }
 
 return errors;
