@@ -43,7 +43,7 @@ class PostsIndex extends Component{
 }
 
 function mapStateToProps(state){
-  console.log("state",state);
+  console.log("state",state.posts);
   return { posts: state.posts}
 }
 
