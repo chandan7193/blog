@@ -11,7 +11,7 @@ import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
-ReactDOM.render(
+const myapp =ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
       <div>
@@ -23,3 +23,6 @@ ReactDOM.render(
     </BrowserRouter>
   </Provider>
   , document.querySelector('.container'));
+
+
+window.store=myapp
