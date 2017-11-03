@@ -13,7 +13,10 @@ class PostsIndex extends Component{
   }
 
   renderPosts(){
-    console.log("Inside renderPosts",this.props.posts)
+    const data = this.props.posts;
+    console.log("data",data[158092]);
+    console.log("Inside renderPosts",this.props.posts.id)
+
     return _.map(this.props.posts, post =>{
       return (
         <li className="list-group-item" key={post.id}>
